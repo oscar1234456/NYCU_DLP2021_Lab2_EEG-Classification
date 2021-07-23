@@ -4,26 +4,24 @@ from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
 import torch
 from torch import nn, optim
-from model import EEGnet
+from model import DeepConvNet
 from tester import test
 from trainner import train
 import matplotlib.pyplot as plt
-
 
 ## NN
 # Get cpu or gpu device for training.
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Using {} device".format(device))
 
-
-EEGnetModel = EEGnet().to(device)
-print(EEGnetModel)
+DeepConvNetModel = DeepConvNet().to(device)
+print(DeepConvNetModel)
 
 ## Parameters
 Batch_size = 64
-Learning_rate = 0.001
+Learning_rate = 1e-2
 Epochs = 300
-optimizer = optim.Adam(EEGnetModel.parameters())
+optimizer = optim.Adam(DeepConvNetModel.parameters())
 loss_fn = nn.CrossEntropyLoss()
 
 ## Data loader
@@ -37,16 +35,12 @@ for X, y in Train_loader:
     print("Shape of y: ", y.shape, y.dtype)
     break
 
+
 ## Training
 
 for t in range(Epochs):
-    print(f"-----------Epoch | {t+1} |------------")
-    train(Train_loader, EEGnetModel, loss_fn, optimizer, device)
-    test(EEGnetModel, Train_loader, loss_fn, device)
-    EEGnetModel.train()
+    print(f"Epoch {t+1}\n-------------------------------")
+    train(Train_loader,DeepConvNetModel, loss_fn, optimizer, device)
 print("Done!")
 
-test(EEGnetModel,Test_loader,loss_fn, device)
-
-## Save my model
-torch.save(EEGnetModel.state_dict(), 'EEGnet_ReLu_weight.pth') #Save weight
+test(DeepConvNetModel,Test_loader,loss_fn, device)

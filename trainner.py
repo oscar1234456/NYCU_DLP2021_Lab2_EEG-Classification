@@ -1,6 +1,6 @@
 def train(dataloader, model, loss_fn, optimizer, device):
     size = len(dataloader.dataset)
-    print("size:", size)
+    # print("size:", size)
     for batch, (X, y) in enumerate(dataloader):
         X, y = X.to(device), y.to(device)
         # print(f"X :{X.shape}")
@@ -17,6 +17,6 @@ def train(dataloader, model, loss_fn, optimizer, device):
         loss.backward()
         optimizer.step()
 
-        if batch % 1 == 0:
+        if batch % 5 == 0:
             loss, current = loss.item(), batch * len(X)
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
