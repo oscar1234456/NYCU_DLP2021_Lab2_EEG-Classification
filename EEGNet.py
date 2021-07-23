@@ -22,7 +22,7 @@ print(EEGnetModel)
 ## Parameters
 Batch_size = 64
 Learning_rate = 1e-2
-Epochs = 150
+Epochs = 300
 optimizer = optim.Adam(EEGnetModel.parameters())
 loss_fn = nn.CrossEntropyLoss()
 
