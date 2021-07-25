@@ -19,7 +19,7 @@ print(DeepConvNetModel)
 
 ## Parameters
 Batch_size = 64
-Learning_rate = 1e-2
+Learning_rate = 0.001
 Epochs = 300
 optimizer = optim.Adam(DeepConvNetModel.parameters())
 loss_fn = nn.CrossEntropyLoss()
@@ -41,6 +41,13 @@ for X, y in Train_loader:
 for t in range(Epochs):
     print(f"Epoch {t+1}\n-------------------------------")
     train(Train_loader,DeepConvNetModel, loss_fn, optimizer, device)
+    test(DeepConvNetModel, Train_loader, loss_fn, device)
+    print("Test_loader:")
+    test(DeepConvNetModel, Test_loader, loss_fn, device)
+    DeepConvNetModel.train()
 print("Done!")
 
 test(DeepConvNetModel,Test_loader,loss_fn, device)
+
+## Save my model
+torch.save(DeepConvNetModel.state_dict(), 'DeepConvNetModel_ELu_weight.pth') #Save weight

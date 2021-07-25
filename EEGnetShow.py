@@ -16,7 +16,8 @@ if __name__ == '__main__':
     print("Using {} device".format(device))
 
     EEGnetModelFinal = EEGnet().to(device)
-    EEGnetModelFinal.load_state_dict(torch.load('EEGnet_ReLu_weight.pth'))
+    EEGnetModelFinal.load_state_dict(torch.load('EEGnet_ReLu_weight3.pth'))
     print(EEGnetModelFinal)
+    print("EEGnet(Modified) (ReLU):")
     test(EEGnetModelFinal, Test_loader,loss_fn,device)
 
