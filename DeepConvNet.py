@@ -1,20 +1,25 @@
 ##
+#Author: 310551076 Oscar Chen
+#Course: NYCU DLP 2021 Summer
+#Title: Lab2 EEG Classification
+#Date: 2021/07/24
+#Subject: Implement two CNN Model: EEGNet, DeepConvNet using Pytorch
+#Email: oscarchen.cs10@nycu.edu.tw
+import pickle
 import dataloader
 from torch.utils.data import DataLoader, TensorDataset
-import numpy as np
 import torch
 from torch import nn, optim
 from model import DeepConvNet
 from tester import test
 from trainner import train
-import matplotlib.pyplot as plt
 
 ## NN
 # Get cpu or gpu device for training.
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Using {} device".format(device))
 
-DeepConvNetModel = DeepConvNet().to(device)
+DeepConvNetModel = DeepConvNet('LeakyReLU').to(device)  #TODO: Change the Activation Function
 print(DeepConvNetModel)
 
 ## Parameters
@@ -37,17 +42,25 @@ for X, y in Train_loader:
 
 
 ## Training
-
+DeepConvNetModelTrainingRes = list()
+DeepConvNetModelTestingRes = list()
 for t in range(Epochs):
-    print(f"Epoch {t+1}\n-------------------------------")
+    print(f"-----------Epoch | {t+1} |------------")
     train(Train_loader,DeepConvNetModel, loss_fn, optimizer, device)
-    test(DeepConvNetModel, Train_loader, loss_fn, device)
-    print("Test_loader:")
-    test(DeepConvNetModel, Test_loader, loss_fn, device)
+    trainingRes = test(DeepConvNetModel, Train_loader, loss_fn, device, "Train")
+    testingRes = test(DeepConvNetModel, Test_loader, loss_fn, device, "Test")
     DeepConvNetModel.train()
+    DeepConvNetModelTrainingRes.append(trainingRes)
+    DeepConvNetModelTestingRes.append(testingRes)
 print("Done!")
 
-test(DeepConvNetModel,Test_loader,loss_fn, device)
+test(DeepConvNetModel,Test_loader,loss_fn, device, "Test")
+
+##Save Training & Testing Accuracy Result
+with open('DeepConvNet_LeakyReLU_Training.pickle', 'wb') as f:
+    pickle.dump(DeepConvNetModelTrainingRes, f)
+with open('DeepConvNet_LeakyReLU_Testing.pickle', 'wb') as f:
+    pickle.dump(DeepConvNetModelTestingRes, f)
 
 ## Save my model
-torch.save(DeepConvNetModel.state_dict(), 'DeepConvNetModel_ELu_weight.pth') #Save weight
+torch.save(DeepConvNetModel.state_dict(), 'DeepConvNetModel_LeakyReLU_weight.pth') #Save weight

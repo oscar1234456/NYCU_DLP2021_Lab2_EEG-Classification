@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89174fc8-1348-40c6-90de-24fb39920c03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DeepConvNetShow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compareFig.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DeepConvNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepConvNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNetModel_ELu_weight.pth" beforeDir="false" afterPath="$PROJECT_DIR$/DeepConvNetModel_ELu_weight.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNetShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepConvNetShow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEGNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEGNet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEGnetShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEGnetShow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEGnet_ReLu_weight.pth" beforeDir="false" afterPath="$PROJECT_DIR$/EEGnet_ReLu_weight.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainner.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainner.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.EEGnetShow">
+  <component name="RunManager" selected="Python.DeepConvNetShow">
     <configuration name="DeepConvNet" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="untitled1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,20 +156,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="compareFig" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="untitled1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/compareFig.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.EEGnetShow" />
         <item itemvalue="Python.DeepConvNetShow" />
+        <item itemvalue="Python.EEGnetShow" />
         <item itemvalue="Python.DeepConvNet" />
         <item itemvalue="Python.EEGNet" />
-        <item itemvalue="Python.plot" />
+        <item itemvalue="Python.compareFig" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +203,8 @@
       <workItem from="1627029046372" duration="147000" />
       <workItem from="1627029223826" duration="19272000" />
       <workItem from="1627094665179" duration="16887000" />
-      <workItem from="1627201167773" duration="8203000" />
+      <workItem from="1627201167773" duration="9709000" />
+      <workItem from="1627281714027" duration="7346000" />
     </task>
     <servers />
   </component>
@@ -228,12 +229,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model.py</url>
-          <line>35</line>
+          <line>46</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model.py</url>
-          <line>37</line>
+          <line>48</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
@@ -245,8 +246,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/untitled1$EEGNet.coverage" NAME="EEGNet Coverage Results" MODIFIED="1627207536466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/untitled1$EEGNet.coverage" NAME="EEGNet Coverage Results" MODIFIED="1627285280868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled1$test.coverage" NAME="test Coverage Results" MODIFIED="1626957604705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/untitled1$EEGnetShow.coverage" NAME="EEGnetShow Coverage Results" MODIFIED="1627289800397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled1$DeepConvNet.coverage" NAME="DeepConvNet Coverage Results" MODIFIED="1627203982699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled1$plot.coverage" NAME="plot Coverage Results" MODIFIED="1627132485656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

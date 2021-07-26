@@ -1,18 +1,15 @@
+#Author: 310551076 Oscar Chen
+#Course: NYCU DLP 2021 Summer
+#Title: Lab2 EEG Classification
+#Date: 2021/07/24
+#Subject: Implement two CNN Model: EEGNet, DeepConvNet using Pytorch
+#Email: oscarchen.cs10@nycu.edu.tw
 def train(dataloader, model, loss_fn, optimizer, device):
     size = len(dataloader.dataset)
-    # print("size:", size)
     for batch, (X, y) in enumerate(dataloader):
         X, y = X.to(device), y.to(device)
-        # print(f"X :{X.shape}")
-        # print(f"batch:{batch}")
-        # print("y length:",y.shape)
-        # Compute prediction error
         pred = model(X)
-        # print(f"pred:{pred.shape}")
-        # print(f"y shape:{y.shape}")
-        loss = loss_fn(pred,  y )
-        # #
-        # # Backpropagation
+        loss = loss_fn(pred,  y)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()

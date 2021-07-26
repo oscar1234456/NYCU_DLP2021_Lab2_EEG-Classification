@@ -1,4 +1,10 @@
 ##
+#Author: 310551076 Oscar Chen
+#Course: NYCU DLP 2021 Summer
+#Title: Lab2 EEG Classification
+#Date: 2021/07/24
+#Subject: Implement two CNN Model: EEGNet, DeepConvNet using Pytorch
+#Email: oscarchen.cs10@nycu.edu.tw
 import dataloader
 from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
@@ -7,7 +13,7 @@ from torch import nn, optim
 from model import EEGnet
 from tester import test
 from trainner import train
-import matplotlib.pyplot as plt
+import pickle
 
 
 ## NN
@@ -16,7 +22,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Using {} device".format(device))
 
 
-EEGnetModel = EEGnet().to(device)
+EEGnetModel = EEGnet("ELU").to(device)
 print(EEGnetModel)
 
 ## Parameters
@@ -38,17 +44,25 @@ for X, y in Train_loader:
     break
 
 ## Training
-
+EEGnetModelTrainingRes = list()
+EEGnetModelTestingRes = list()
 for t in range(Epochs):
     print(f"-----------Epoch | {t+1} |------------")
     train(Train_loader, EEGnetModel, loss_fn, optimizer, device)
-    test(EEGnetModel, Train_loader, loss_fn, device)
-    print("Test_loader:")
-    test(EEGnetModel, Test_loader, loss_fn, device)
+    trainingRes = test(EEGnetModel, Train_loader, loss_fn, device, "Train")
+    testingRes = test(EEGnetModel, Test_loader, loss_fn, device, "Test")
     EEGnetModel.train()
+    EEGnetModelTrainingRes.append(trainingRes)
+    EEGnetModelTestingRes.append(testingRes)
 print("Done!")
 
-test(EEGnetModel,Test_loader,loss_fn, device)
+test(EEGnetModel,Test_loader,loss_fn, device,"Test")
+
+##Save Training & Testing Accuracy Result
+with open('EEGnet_ELU_Training.pickle', 'wb') as f:
+    pickle.dump(EEGnetModelTrainingRes, f)
+with open('EEGnet_ELU_Testing.pickle', 'wb') as f:
+    pickle.dump(EEGnetModelTestingRes, f)
 
 ## Save my model
-torch.save(EEGnetModel.state_dict(), 'EEGnet_ReLu_weight.pth') #Save weight
+torch.save(EEGnetModel.state_dict(), 'EEGnet_ELU_weight.pth') #Save weight
