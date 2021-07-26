@@ -19,9 +19,23 @@ if __name__ == '__main__':
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print("Using {} device".format(device))
 
-    DeepConvNetFinal = DeepConvNet("ELU").to(device)
-    DeepConvNetFinal.load_state_dict(torch.load('DeepConvNetModel_ELu_weight1.pth'))
-    print( DeepConvNetFinal)
+    DeepConvNetFinal_ReLU = DeepConvNet("ReLU").to(device)
+    DeepConvNetFinal_ReLU.load_state_dict(torch.load('DeepConvNetModel_ReLU_weight2.pth'))
+    # print(DeepConvNetFinal_ReLU)
+    print("DeepConvNetFinal(Modified) (ReLU):")
+    test( DeepConvNetFinal_ReLU, Test_loader,loss_fn,device, "Test")
+    print()
+
+    DeepConvNetFinal_LeakyReLU = DeepConvNet("LeakyReLU").to(device)
+    DeepConvNetFinal_LeakyReLU.load_state_dict(torch.load('DeepConvNetModel_LeakyReLu_weight.pth'))
+    # print(DeepConvNetFinal_LeakyReLU)
+    print("DeepConvNetFinal(Modified) (LeakyReLU):")
+    test(DeepConvNetFinal_LeakyReLU, Test_loader, loss_fn, device, "Test")
+    print()
+
+    DeepConvNetFinal_ELU = DeepConvNet("ELU").to(device)
+    DeepConvNetFinal_ELU.load_state_dict(torch.load('DeepConvNetModel_ELu_weight2.pth'))
+    # print(DeepConvNetFinal_ELU)
     print("DeepConvNetFinal(Modified) (ELU):")
-    test( DeepConvNetFinal, Test_loader,loss_fn,device, "Test")
+    test(DeepConvNetFinal_ELU, Test_loader, loss_fn, device, "Test")
 

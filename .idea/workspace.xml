@@ -2,17 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89174fc8-1348-40c6-90de-24fb39920c03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compareFig.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepConvNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepConvNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepConvNetModel_ELu_weight.pth" beforeDir="false" afterPath="$PROJECT_DIR$/DeepConvNetModel_ELu_weight.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNetModel_ELu_weight.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNetModel_ELu_weight1.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNetModel_LeakyReLu_weight1.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNetModel_ReLU_weight.pth" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DeepConvNetShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepConvNetShow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEGNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEGNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNet_ELU_Testing.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNet_ELU_Training.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNet_LeakyReLU_Testing.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNet_LeakyReLU_Training.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNet_ReLU_Testing.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepConvNet_ReLU_Training.pickle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EEGnetShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEGnetShow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEGnet_ReLu_weight.pth" beforeDir="false" afterPath="$PROJECT_DIR$/EEGnet_ReLu_weight.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainner.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEGnet_ELU_Testing.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEGnet_ELU_Training.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEGnet_LeakyReLU_Testing.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEGnet_LeakyReLU_Training.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEGnet_ReLU_Testing.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEGnet_ReLU_Training.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEGnet_ReLu_weight.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_DeepConvNet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_EEGNet.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +70,9 @@
       <module name="untitled1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -160,6 +174,9 @@
       <module name="untitled1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -204,7 +221,8 @@
       <workItem from="1627029223826" duration="19272000" />
       <workItem from="1627094665179" duration="16887000" />
       <workItem from="1627201167773" duration="9709000" />
-      <workItem from="1627281714027" duration="7346000" />
+      <workItem from="1627281714027" duration="8305000" />
+      <workItem from="1627314860332" duration="1080000" />
     </task>
     <servers />
   </component>
